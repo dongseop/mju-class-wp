@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="utf-8">
+	<title>실습 3 - 테이블 만들기</title>
+	</head>
+
+	<body>
+		<table border="1">
+			<tr>
+				<th>분류</th><th>제품명</th>
+				<th>단가</th><th>수량</th>
+				<th>금액</th>
+			</tr>
+			<tr>
+				<td rowspan="3">공산품</td>
+				<td>iPhone</td>
+				<td>900,000</td>
+				<td>2</td>
+				<td>1,800,000</td>
+			</tr>
+			<tr>
+				<td>LED TV</td>
+				<td>3,000,000</td>
+				<td>3</td>
+				<td>9,000,000</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align:center">소계</td>
+				<td>10,800,000</td>
+			</tr>
+			<tr>
+				<td rowspan="2">농산품</td>
+				<td>인삼</td>
+				<td>10,000</td>
+				<td>200</td>
+				<td>2,000,000</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align:center">소계</td>
+				<td>2,000,000</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align:center">합계</td>
+				<td>12,800,000</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

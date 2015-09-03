@@ -1,0 +1,59 @@
+html{
+	color:#000;
+	background:#fff;
+	padding:20px 0;
+	font: 14px/20px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdan, Arial, Tahoma;
+}
+
+#board {
+	width:100%;
+	border-color:#888;
+	border-width:2px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	margin:0;
+	padding:0;
+}
+
+div.row{
+	border-color:#ccc;
+	border-width:1px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	overflow:auto;
+}
+
+div.col {
+	text-align: center;
+	margin: 1em;
+	float: left;
+}
+div.number{
+	width:50px;
+}
+
+div.title{
+	color: #0b6cb3;
+}
+
+
+
+div.name{
+	width:50px;
+	float:right;
+}
+
+div.date{
+	width:80px;
+	float:right;
+}
+
+#header {
+	background: olive;
+	color: white;
+	font-weight: bold;
+}
+
+#header div.title {
+	color: white;
+}

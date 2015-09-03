@@ -1,0 +1,42 @@
+html{
+	color: #000;
+	background: #fff;
+	padding: 20px 0;
+	font: 14px/28px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdan, Arial, Tahoma;
+}
+
+.pagination {
+	text-align: center;
+	margin: 20px auto;
+}
+
+.pagination span.arrow{
+	color: #246d9c;
+	text-decoration: none;
+	margin: 0.2em;
+}
+
+.pagination a{
+	color: #246d9c;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0.5em;
+	margin: 0 1px 0 0;
+	border-radius: 50%;
+}
+
+.pagination a.current {
+	color: #8a1c5e;
+}
+
+.pagination a.direction{
+	color: #246d9c;
+}
+
+.pagination a:hover,
+.pagination a.current:hover {
+	background: gold;
+	text-decoration: none;
+	font-weight: bold;
+}

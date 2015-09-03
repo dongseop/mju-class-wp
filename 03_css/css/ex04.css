@@ -1,0 +1,102 @@
+html{
+	color:#000;
+	background:#fff;
+	padding: 0.5em;
+	font-size: 14px;
+}
+
+h1 {
+  font-size: 2em;
+	line-height: 150%;
+	margin-bottom: 0.5em;
+	border-bottom: 2px solid #ccc;
+  font-weight: bold;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 1em 0 0.5em 0;
+}
+
+div {
+	margin: 0.5em 0;
+}
+
+p {
+	line-height: 160%;
+	margin: 1em 0;
+}
+
+img.main {
+	width: 100%;
+}
+
+a.more {
+	background-color: pink;
+	color: white;
+	text-decoration: none;
+	padding: 0.5em 1em;
+	margin: 1em 0;
+	border-radius: 0.5em;
+}
+
+.member ul > li {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	padding: 0.5em 1em;
+	background-color: skyblue;
+	box-sizing: border-box;
+	color: white;
+	margin-bottom: 1px;
+	border-right: 1px solid white;
+}
+
+.member ul > li:hover {
+	background-color: royalblue;
+}
+
+@media only screen and (min-device-width : 768px) {
+	div.img {
+		width: 33%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	div.description {
+		width: 66%;
+		display: inline-block;
+		vertical-align: top;
+		padding-left: 1em;
+		box-sizing: border-box;
+	}
+	div.description p {
+		margin-top: 0;
+	}
+	.member ul > li  {
+		width: 25%;
+	}
+}
+
+@media only screen and (min-device-width : 1025px) {
+	div.img {
+		width: 30%;
+	}
+	div.description {
+		width: 50%;
+		padding-right: 1em;
+	}
+	div.member {
+		width: 19%;
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.member ul > li  {
+		width: 100%;
+	}
+	h3 {
+		margin-top: 0;
+	}
+}

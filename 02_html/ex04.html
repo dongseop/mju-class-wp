@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>실습 4 - form,table 만들기</title>
+	</head>
+	<body>
+		<form action="#" method="post">
+			<table border="1">
+				<tr>
+					<th>아이디</th>
+					<td colspan="3">
+						<input type="text" name="id"/>
+						<input type="button" value="중복조회"/>
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input type="text" name="password"/>
+					</td>
+					<th>확인</th>
+					<td>
+						<input type="password" name="password_confirmation"/>
+					</td>
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td colspan="3">
+						<input type="text" name="name"/>
+					</td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td colspan="3">
+						<input type="text" name="email"/>
+					</td>
+				</tr>
+				<tr>
+					<th>성별</th>
+					<td colspan="3">
+						<input type="radio" name="gender" value="m"/>남
+						<input type="radio" name="gender" value="f"/>녀
+					</td>
+				</tr>
+				<tr>
+					<th>지역</th>
+					<td colspan="3">
+						<select name="location">
+							<option value="seoul">서울</option>
+							<option value="busan">부산</option>
+							<option value="etc">기타</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<input type="checkbox" name="tems"/>약관에 동의합니다.
+					</td>
+				</tr>
+			</table>
+			<input type="submit"  value="회원가입" />
+		</form>
+	</body>
+</html>
