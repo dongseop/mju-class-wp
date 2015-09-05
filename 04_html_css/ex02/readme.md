@@ -56,9 +56,9 @@
     - --save는 이 프로젝트의 로컬에 인스톨 하면서 package.json에 기록되어 추후 npm install 로 한꺼번에 인스톨 할 수 있습니다.
     - --save-dev는 save와 유사하지만, 프로젝트의 실행에는 필요없고, 개발 단계에서만 필요하다는 뜻입니다.
   - 예
-```
-npm install -g gulp
-npm install --save-dev gulp
-npm install --save express
-npm install -g express-generator
-```
+  ```
+  npm install -g gulp
+  npm install --save-dev gulp
+  npm install --save express
+  npm install -g express-generator
+  ```
