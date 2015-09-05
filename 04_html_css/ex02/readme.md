@@ -6,11 +6,11 @@
   ```
 
 1. express generator를 이용하여 app을 하나 만듭니다.
-  ```
+  ```sh
   express -e -c sass --git app03
-  // -e: Jade대신 EJS template 엔진을 이용합니다. Jade도 좋지만, 일단은 HTML과 가장 유사한 EJS를 사용해봅시다.
-  // -c sass: sass나 scss를 사용하려고 합니다.
-  // --git: git을 사용할 때 편리하도록 .gitignore를 자동으로 생성합니다.
+  # -e: Jade대신 EJS template 엔진을 이용합니다. Jade도 좋지만, 일단은 HTML과 가장 유사한 EJS를 사용해봅시다.
+  # -c sass: sass나 scss를 사용하려고 합니다.
+  # --git: git을 사용할 때 편리하도록 .gitignore를 자동으로 생성합니다.
   ```
 
 1. 디렉토리에 들어가서 파일들을 살펴봅시다.
