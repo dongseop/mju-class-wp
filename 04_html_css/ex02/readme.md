@@ -1,33 +1,33 @@
 # 실습하는 법
 
 1. npm을 이용하여 express-generator (express app 뼈대를 자동 생성해주는 프로그램)을 설치합니다.
-```
-npm install -g express-generator
-```
+  ```
+  npm install -g express-generator
+  ```
 
 1. express generator를 이용하여 app을 하나 만듭니다.
-```
-express -e -c sass --git app03
-// -e: Jade대신 EJS template 엔진을 이용합니다. Jade도 좋지만, 일단은 HTML과 가장 유사한 EJS를 사용해봅시다.
-// -c sass: sass나 scss를 사용하려고 합니다.
-// --git: git을 사용할 때 편리하도록 .gitignore를 자동으로 생성합니다.
-```
+  ```
+  express -e -c sass --git app03
+  // -e: Jade대신 EJS template 엔진을 이용합니다. Jade도 좋지만, 일단은 HTML과 가장 유사한 EJS를 사용해봅시다.
+  // -c sass: sass나 scss를 사용하려고 합니다.
+  // --git: git을 사용할 때 편리하도록 .gitignore를 자동으로 생성합니다.
+  ```
 
 1. 디렉토리에 들어가서 파일들을 살펴봅시다.
-```
-cd app03
-atom .
+  ```
+  cd app03
+  atom .
 ```
 
 1. package들을 설치합니다.
-```
-npm install
-```
+  ```
+  npm install
+  ```
 
 1. 서버를 실행해봅시다.
-```
-nodemon ./bin/www
-```
+  ```
+  nodemon ./bin/www
+  ```
 
 1. 웹브라우져에서 http://localhost:3000 에 접속해봅시다.
 
