@@ -1,0 +1,55 @@
+.tab:after, .tab>ul:after, .tab>ul>li:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.tab > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab > ul > li {
+  float:left;
+  margin-right:1px;
+}
+
+.tab > ul > li > a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.tab > ul > li {
+  background: #4CB1E5;
+}
+
+.tab > ul > li:hover {
+  background: #75a44b;
+}
+
+.tab > ul > li.active,
+.tab > ul > li.active:hover {
+  background: #064681;
+}
+
+.tab > .content {
+  background: #eee;
+  border: 1px solid #888;
+  border-top: 1px solid #4CB1E5;
+}
+
+.tab > .content > div {
+  padding: 2em;
+  display: none;
+}
+
+.tab > .content > div.selected {
+  display: block;
+}
+
+img.full {
+  width: 100%;
+}

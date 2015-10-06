@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="lodash.js"></script>
+	<script src="calculator.js"></script>
+	<link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+	<div>
+		<table id="tab" border="1">
+			<thead>
+			<tr>
+				<th></th>
+				<th>상품명</th>
+				<th>단가</th>
+				<th>개수</th>
+				<th>가격</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+			<tr>
+				<th colspan="4">합계</th>
+				<th><span id="sum" class="price"></span></th>
+			</tr>
+			</tfoot>
+		</table>
+		<input type="button" value="물품추가" id="add">
+		<input type="button" value="물품삭제" id="del">
+	</div>
+	</body>
+</html>
+<script id="rowTemplate" type="text/template">
+	<tr>
+		<td><input type='checkbox'></td>
+		<td><input type='text' size='15'></td>
+		<td><input type='text' size='10' class='unit-price' onchange='recalculate();'></td>
+		<td>
+			<select class='qty' onchange='recalculate();'>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select>
+		</td>
+		<td align="right"><span class='price'></span></td>
+	</tr>
+</script>
+<script type="text/javascript">
+$(function() {
+	initCalculator();
+});
+</script>

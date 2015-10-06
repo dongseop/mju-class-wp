@@ -1,0 +1,9 @@
+html{color:#000;
+  padding:20px 0;
+  font: 12px/18px "맑은 고딕", "Malgun Gothic";
+}
+#tab {border-collapse:collapse;border-spacing:0;}
+td,th {border:1px solid #444;font: 12px/18px "맑은 고딕", "Malgun Gothic";padding:5px;}
+thead tr, tfoot tr{background:#888;color:#fff;}
+tbody tr{background:#EEE;}
+span.price {display:box;text-align:right; width:200px;font-weight:bold;}
