@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<title>jQuery Test</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="lodash.js"></script>
 	<script src="calculator.js"></script>
 	<link rel="stylesheet" href="calculator.css">
 </head>
@@ -12,21 +11,16 @@
 	<div>
 		<table id="tab" border="1">
 			<thead>
-			<tr>
-				<th></th>
-				<th>상품명</th>
-				<th>단가</th>
-				<th>개수</th>
-				<th>가격</th>
-			</tr>
+				<tr>
+					<th></th><th>상품명</th><th>단가</th><th>개수</th><th>가격</th>
+				</tr>
 			</thead>
-			<tbody>
-			</tbody>
+			<tbody></tbody>
 			<tfoot>
-			<tr>
-				<th colspan="4">합계</th>
-				<th><span id="sum" class="price"></span></th>
-			</tr>
+				<tr>
+					<th colspan="4">합계</th>
+					<th><span id="sum" class="price"></span></th>
+				</tr>
 			</tfoot>
 		</table>
 		<input type="button" value="물품추가" id="add">

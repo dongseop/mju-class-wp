@@ -1,3 +1,6 @@
+.tab {
+  margin: 2em 0;
+}
 .tab:after, .tab>ul:after, .tab>ul>li:after{
   content:"";
   display:block;
@@ -13,14 +16,16 @@
 .tab > ul > li {
   float:left;
   margin-right:1px;
+  color: #fff;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
 }
 
 .tab > ul > li > a {
   display: inline-block;
   padding: 0.5em 1em;
-  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  color: #fff;
 }
 .tab > ul > li {
   background: #4CB1E5;
@@ -32,13 +37,24 @@
 
 .tab > ul > li.active,
 .tab > ul > li.active:hover {
-  background: #064681;
+  background: #eee;
+  color: #000;
+  border: 1px solid #4CB1E5;
+  border-bottom: 0;
+  margin-bottom: -1px;
 }
 
+.tab > ul > li.active a,
+.tab > ul > li.active:hover a {
+  color: #000;
+  font-weight: bold;
+}
 .tab > .content {
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+  border-top-right-radius: 0.4em;
   background: #eee;
-  border: 1px solid #888;
-  border-top: 1px solid #4CB1E5;
+  border: 1px solid #4CB1E5;
 }
 
 .tab > .content > div {

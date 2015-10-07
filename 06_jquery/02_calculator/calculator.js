@@ -1,6 +1,6 @@
 function recalculate() {
 	var sum = 0;
-  _.each($("#tab tbody tr"), function(row) {
+  $("#tab tbody tr").each(function(idx, row) {
     var $el = $(row);
 		var unitPrice = parseInt($el.find(".unit-price").val(), 10);
 		var qty = parseInt($el.find(".qty").val());
@@ -17,16 +17,14 @@ function initCalculator() {
 	$('#add').click(function() {
 		$("#tab tbody").append($('#rowTemplate').html());
 	});
-
 	$('#del').click(function() {
 		if (confirm("정말 삭제하시겠습니까?")) {
 			var $els = $("tr input[type='checkbox']:checked");
-      _.each($els, function(el) {
+      $els.each(function(idx, el) {
         $(el).parents("tr").empty();
       });
 			recalculate();
 		}
 	});
-
 	$('#add').click();
 }
