@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 회원 목록
+    
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th 아이디
+          th 이름
+          th 이메일
+          th
+      tbody
+        each user in users
+          tr
+            td
+              a(href='/users/#{user._id}')= user._id
+            td= user.name
+            td= user.email
+            td
+              a.btn.btn-xs.btn-default(href='/users/#{user._id}/edit') 수정
+              | 
+              a.btn.btn-xs.btn-default(href='/users/#{user._id}/edit', _method='DELETE') 삭제

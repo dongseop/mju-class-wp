@@ -1,0 +1,151 @@
+form.todos {
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  background: #acddf2; }
+  form.todos .main input[type='text'] {
+    font-size: 1.4em;
+    border: 1px solid #2c9cd2;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box; }
+  form.todos .actions button {
+    margin-top: 1em; }
+
+.tasks {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .tasks li.task {
+    border-bottom: 1px solid #eaeaea;
+    padding: 1em 0; }
+    .tasks li.task span {
+      display: inline-block;
+      margin-right: 1em; }
+    .tasks li.task .check {
+      width: 2em;
+      height: 2em;
+      border-radius: 1em;
+      border: 1px solid #2c9cd2;
+      vertical-align: bottom; }
+    .tasks li.task .content {
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 2em; }
+    .tasks li.task .category {
+      float: right;
+      min-width: 5em;
+      font-size: 0.9em; }
+    .tasks li.task .priority {
+      font-size: 0.8em;
+      border-radius: 0.8em;
+      background-color: #888;
+      color: #fff;
+      height: 200%;
+      line-height: 1.6em;
+      text-align: center;
+      padding: 0 1em; }
+      .tasks li.task .priority.p2 {
+        background-color: #b0b33c; }
+      .tasks li.task .priority.p3 {
+        background-color: #a51e23; }
+    .tasks li.task .deadline {
+      color: #ccc;
+      font-size: 0.9em; }
+
+.side .section {
+  background: #888;
+  width: 100%;
+  color: #fff; }
+  .side .section a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 1em 0.5em 3em;
+    border-bottom: 1px solid #fff; }
+    .side .section a:last-child {
+      border-bottom: 0; }
+    .side .section a.all {
+      background: #444; }
+  .side .section a.selected {
+    padding-left: 1em;
+    background-color: #009eec; }
+    .side .section a.selected:before {
+      font-family: FontAwesome;
+      content: "\f00c";
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 1em; }
+  .side .section a:hover, .side .section a.selected:hover {
+    background-color: #337AB7; }
+
+.form-signin {
+  width: 320px;
+  height: 300px;
+  padding: 0;
+  top: 10em;
+  left: 50%;
+  position: absolute;
+  margin: 0 0 0 -160px; }
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+    font-weight: normal; }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px; }
+  .form-signin .form-control:focus {
+    z-index: 2; }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 50px;
+  padding-top: 1em; }
+
+a {
+  color: #00B7FF; }
+
+.jumbotron {
+  margin-top: -1em;
+  background: url("/images/bg.jpg") no-repeat left top;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  min-height: 20em;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+
+.form-actions {
+  padding: 19px 20px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5; }
+  .footer .container {
+    padding-right: 1em;
+    padding-left: 1em; }
+    .footer .container .text-muted {
+      margin: 20px 0;
+      color: #bbb; }
