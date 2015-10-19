@@ -18,9 +18,8 @@ npm install -g nodemon
 ## 2. 프로젝트 생성
 Express generator를 이용하여
 ```
-express ex01 -c sass --git
+express ex01 --git
 # Layout 엔진 Jade 사용
-# SASS 사용
 # .gitignore 파일 자동 추가
 ```
 
