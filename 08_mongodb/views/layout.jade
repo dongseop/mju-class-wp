@@ -1,0 +1,26 @@
+doctype html
+html(lang='ko')
+  head
+    block title
+      title BBDO
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='/bower_components/jquery/dist/jquery.js')
+    script(type='text/javascript', src='/bower_components/bootstrap/dist/js/bootstrap.js')
+  body
+    block top-nav
+      include ./includes/topnav
+    block hero-unit
+    if messages
+      each texts, type in messages
+        .container
+          .alert(class='alert-#{type}')
+            each msg in texts
+              p= msg           
+    block content
+
+    block footer
+      include ./includes/footer
