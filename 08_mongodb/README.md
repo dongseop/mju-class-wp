@@ -1,4 +1,4 @@
-# App1: 레이아웃, Jade, Route 이해하기
+# App2: MongoDB, Mongoose를 이용하여 CRUD 처리
 
 ## 1. Mongoose 설치
 ```

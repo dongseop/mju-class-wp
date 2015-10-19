@@ -15,7 +15,14 @@
         li
           a(href='/users') Users
       ul.nav.navbar-nav.navbar-right
-        li
-          a(href='/signin') Signin
-        li
-          a(href='/users/new') Signup
+        if (!currentUser) 
+          li
+            a(href='/signin') Signin
+          li
+            a(href='/users/new') Signup
+        else
+          li
+            a(href='/users/#{currentUser._id}') Profile
+          li
+            a(href='/signout') Signout
+          

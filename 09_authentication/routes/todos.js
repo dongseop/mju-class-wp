@@ -13,8 +13,7 @@ router.get('/', function(req, res, next) {
     categories: [
       '학교',
       '집',
-    ],
-    messages: req.flash()
+    ]
   });
 });
 
