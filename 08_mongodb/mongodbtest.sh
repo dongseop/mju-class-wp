@@ -1,0 +1,11 @@
+db.users.insert({name: 'Kim', age: 30, tel: '555-6666', gender: 'm'})
+db.users.insert({name: 'Lee', age: 22, tel: '444-6666', gender: 'm'})
+db.users.insert({name: 'Cho', age: 23, tel: '222-2222', gender: 'm'})
+db.users.insert({name: 'Park', age: 43, gender: 'f', scores: [100, 200, 600]})
+db.users.insert({name: 'Choi', age: 26, gender: 'f', department: {name: 'CS', loc: 'Yongin'}})
+
+db.users.find()
+db.users.find({gender: 'm'})
+db.users.find({name: { $in: ['Park', 'Choi']}})
+db.users.find({gender: 'm', age: { $gt: 25}})
+db.users.find({$or: [{age: {$lte: 23}}, {gender: 'f'}]})
