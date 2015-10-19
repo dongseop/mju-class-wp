@@ -1,0 +1,35 @@
+form.form-inline(action='/todos', method='POST', class='todos')
+  .form
+    .main
+      input(type='text', id='task', name='task', placeholder='해야할 일이 무엇인가요?')
+    .sub
+      .form-group
+        input.form-control(type='text', id='category', name='category', placeholder='분류')
+      .form-group
+        select.form-control(name='priority')
+          option(value='1') 중요
+          option(value='2', selected) 보통
+          option(value='3') 사소
+      .form-group
+        input.form-control(type='date', id='deadline', name='deadline')
+  .actions
+      button.btn.btn-primary.btn-lg.btn-block(type='submit') 저장
+
+ul.tasks
+  each task in tasks
+    li.task(data-id='#{task._id}')
+      span.check
+      span.content= task.content
+      if task.category
+        span.label.label-default.category= task.category
+      span.priority(class='p#{task.priority}')
+        case task.priority
+          when 1
+            | 사소
+          when 2
+            | 보통
+          when 3
+            | 중요
+      if task.deadline
+        span.deadline= moment(task.deadline).format('YYYY-MM-DD')
+      
