@@ -9,6 +9,7 @@ block content
         tr
           th 이름
           th 이메일
+          th 가입일시
           th
       tbody
         each user in users
@@ -16,6 +17,7 @@ block content
             td
               a(href='/users/#{user._id}')= user.name
             td= user.email
+            td= moment(user.createdAt).format('YYYY-MM-DD HH:mm:ss')
             td
               a.btn.btn-xs.btn-default(href='/users/#{user._id}/edit') 수정
               | 

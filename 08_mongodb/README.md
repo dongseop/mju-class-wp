@@ -19,62 +19,18 @@ mongoose.connection.on('error', console.log);
 ## 3. User 모델 추가
 사용자를 저장할 document collection의 모델 models/User.js에 추가
 
-## 4. 기본 패키지 인스톨
-- npm install을 하면 로컬(현재 디렉토리)에 node package를 인스톨 한다.
-- '--save' 옵션은 package.json에 해당 내용을 저장하게 한다.
-- '--save-dev' 옵션은 package.json의 개발용 의존성 부분에 해당 내용을 저장하게 한다.
-  즉, 이 패키지는 사이트의 개발시에 필요하고, 실제 서비스 운영에는 필요없다는 뜻이다.
+## 4. users.js controller 구현
+Route 함수에 맞게 User 모델을 이용하여 실제 controller logic 구현
+
+## 5. 사용자 인증
+- req.session.user 객체가 있으면 로그인 된 것으로 간주
+- signout에서 delete req.session.user를 통해 user객체 삭제
+
+## 6. Middleware를 이용하여 res.locals에 currentuser와 flashMessages 전달
+```js
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.session.user;
+  res.locals.flashMessages = req.flash();
+  next();
+});
 ```
-# express generator가 만들어둔 패키지 셋팅 인스톨
-npm install
-
-# gulp 로컬 인스톨
-npm install --save-dev gulp
-
-# gulp관련 패키지 인스톨
-npm install --save-dev gulp-jshint gulp-sass gulp-nodemon
-
-# session을 사용하기 위해서 인스톨
-npm install --save express-session method-override moment connect-flash
-```
-
-
-## 5. 프로그램 시작
-```
-npm start
-```
-참고: nodemon을 이용하면 프로그램이 변경될 때 서버 자동 재실행 할 수 있음.
-
-## 6. Client용 package install
-```
-bower init
-bower install --save bootstrap jquery fontawesome bourbon
-```
-
-## 7. gulpfile.js 작성
-gulpfile.js에 작업들을 기술하면 gulp 명령을 통해 해당 작업을 수행할 수 있다.
-gulpfile.js을 잘 살펴보자.
-현재 다음과 같은 작업을 정의하고 있다.
-
-- lint: JavaScript 파일들의 문법을 검사하고 report한다.
-- sass: scss파일들을 컴파일해서 public/stylesheet에 저장한다.
-- watch: sass디렉토리를 감시해서 변경이 일어나면 'sass' 작업을 수행한다.
-- nodemon: nodemon을 통해 bin/www 파일을 실행한다. (서버 실행)
-- default: 아무 명령을 수행하지 않으면 실행할 작업. lint, sass, watch, nodemon을 차례로 수행한다.
-
-그러므로 아래와 같은 명령으로 서버를 실행하면, scss파일 변경되면 자동 컴파일하고, js코드 바뀌면 자동으로 서버 재실행하도록 해서 서버를 실행할 수 있다.
-
-```
-gulp
-```
-
-## 8. app.js
-애플리케이션 미들웨어 설정들
-
-## 9. Route
-URL에 이런 내용이 들어오면 이런 작업을 해라
-
-## 10. view
-Jade를 이용하여 Layout과 partial들. 각 페이지들 구성
-
-## 11. flash
