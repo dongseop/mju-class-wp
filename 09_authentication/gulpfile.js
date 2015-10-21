@@ -8,7 +8,7 @@ var nodemon = require('gulp-nodemon');
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src(['app.js', 'routes/**/*.js', 'models/**/*.js'])
+    return gulp.src(['app.js', 'routes/**/*.js', 'models/**/*.js', 'config/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });

@@ -32,7 +32,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
 app.use(session({
   resave: true,
