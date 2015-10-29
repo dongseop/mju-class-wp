@@ -1,0 +1,40 @@
+form#form-task.form-inline(class='todos')
+  .form
+    .main
+      input(type='text', id='content', name='content', placeholder='해야할 일이 무엇인가요?')
+    .sub
+      .form-group
+        input.form-control(type='text', id='category', name='category', placeholder='분류')
+      .form-group
+        select.form-control(name='priority')
+          option(value='1') 중요
+          option(value='2', selected) 보통
+          option(value='3') 사소
+      .form-group
+        input.form-control(type='date', id='deadline', name='deadline')
+  .actions
+      button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 저장
+
+ul.tasks
+
+.no-task 
+  .alert.alert-info Task가 없습니다.
+script#task-template(type='text/template').
+  <li class='task' data-id='<%= _id %>'>
+    <span class='check'></span>
+    <span class='content'><%=content %></span>
+    <% if (category) { %>
+      <span class='label label-default category'> 
+        <%= category %>
+      </span>
+    <% } %>
+    <span class='priority p<%= priority %>'>
+      <%= (priority === 1) ? "중요" : ((priority === 3) ? "사소": "보통") %>
+    </span>
+    <span class='deadline'><%= deadline %></span>
+  </li>
+      
+script(type='text/javascript').
+  $(function() {
+    var todo = new TaskController();    
+  });
