@@ -41,9 +41,6 @@ router.post('/', needAuth, function(req, res, next) {
 });
 
 router.put('/:id', needAuth, function(req, res, next) {
-  if (!req.body.content) {
-    return res.status(400).json({message: 'need content'});
-  }
   Task.findById(req.params.id, function(err, task) {
     if (err) {
       return res.status(500).json({message: 'internal error', desc: err});

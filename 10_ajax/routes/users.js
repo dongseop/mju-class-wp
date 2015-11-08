@@ -11,7 +11,7 @@ function needAuth(req, res, next) {
   }
 }
 
-function validateForm(form) {
+function validateForm(form, options) {
   var name = form.name || "";
   var email = form.email || "";
   name = name.trim();
@@ -29,7 +29,7 @@ function validateForm(form) {
     return '비밀번호를 입력해주세요.';
   }
 
-  if (form.password != form.password_confirmation) {
+  if (form.password !== form.password_confirmation) {
     return '비밀번호가 일치하지 않습니다.';
   }
 
@@ -64,7 +64,8 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 router.put('/:id', function(req, res, next) {
-  if (validateForm(req.body)) {
+  var err = validateForm(req.body);
+  if (err) {
     req.flash('danger', err);
     return res.redirect('back');
   }
@@ -78,7 +79,7 @@ router.put('/:id', function(req, res, next) {
       return res.redirect('back');
     }
 
-    if (user.password != req.body.current_password) {
+    if (user.password !== req.body.current_password) {
       req.flash('danger', '현재 비밀번호가 일치하지 않습니다.');
       return res.redirect('back');
     }
@@ -119,7 +120,8 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  if (validateForm(req.body, {needPassword: true})) {
+  var err = validateForm(req.body, {needPassword: true});
+  if (err) {
     req.flash('danger', err);
     return res.redirect('back');
   }
