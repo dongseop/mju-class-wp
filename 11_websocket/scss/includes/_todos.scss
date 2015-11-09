@@ -1,0 +1,151 @@
+form.todos {
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  background: #acddf2;
+  .main {
+    input[type='text'] {
+      font-size: 1.4em;
+      border: 1px solid #2c9cd2;
+      padding: 0.5em 1em;
+      margin-bottom: 1em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  .actions button {
+    margin-top: 1em;
+  }
+}
+
+.tasks {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li.task {
+    border-bottom: 1px solid #eaeaea;
+    padding: 1em 0;
+    span {
+      display: inline-block;
+      margin-right: 1em;
+    }
+    .check {
+      width: 2em;
+      height: 2em;
+      border-radius: 1em;
+      border: 1px solid #2c9cd2;
+      vertical-align: bottom;
+      line-height: 2em;
+      text-align:center;
+      color: #fff;
+    }
+    .content {
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 2em;
+    }
+    .category {
+      float: right;
+      min-width: 5em;
+      font-size: 0.9em;
+    }
+    .remove {
+      float: right;
+      color: rgb(184, 51, 9);
+      padding: 0 1em;
+      display: none;
+    }
+    &:hover .remove {
+      display: block;
+    }
+    .priority {
+      font-size: 0.8em;
+      border-radius: 0.8em;
+      background-color: #888;
+      color: #fff;
+      height: 200%;
+      line-height: 1.6em;
+      text-align: center;
+      padding: 0 1em;
+
+      &.p2 {
+        background-color: #b0b33c;
+      }
+      &.p3 {
+        background-color: #a51e23;
+      }
+    }
+
+
+    &.done {
+      background-color: #eee;
+      .check {
+        color: #2c9cd2;
+      }
+
+      span {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+}
+.side {
+  section {
+    background: #888;
+    width: 100%;
+    color: #fff;
+    a {
+      color: #fff;
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.5em 1em 0.5em 3em;
+      border-bottom: 1px solid #fff;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &.all {
+        background: #444;
+      }
+    }
+
+    a.selected {
+      padding-left: 1em;
+      background-color: #009eec;
+      &:before {
+        font-family: FontAwesome;
+        content: "\f00c";
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 1em;
+      }
+    }
+
+    a:hover, a.selected:hover {
+      background-color: #337AB7;
+    }
+  }
+}
+
+#main {
+  ul.tasks {
+    display: block;
+  }
+  .no-task {
+    display: none;
+  }
+
+  &.no-task {
+    ul.tasks {
+      display: none;
+    }
+    .no-task {
+      display: block;
+    }
+  }
+}

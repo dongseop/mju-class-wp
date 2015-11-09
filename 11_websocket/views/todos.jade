@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #main.container.loading
+    .row
+      .col-sm-9
+        include ./includes/todo-main
+      .col-sm-3.side
+        include ./includes/todo-side
+    .spinner
+      .background
+      .foreground
+        p
+          i.fa.fa-circle-o-notch.fa-spin.fa-4x
+        p Loading...
+  script(src='/bower_components/socket.io-client/socket.io.js')
+  script(type='text/javascript', src='/javascripts/todos.js')

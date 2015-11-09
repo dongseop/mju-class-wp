@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 회원 목록
+    
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th 이름
+          th 이메일
+          th 가입일시
+          th
+      tbody
+        each user in users
+          tr
+            td
+              a(href='/users/#{user._id}')= user.name
+            td= user.email
+            td= moment(user.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            td
+              a.btn.btn-xs.btn-default(href='/users/#{user._id}/edit') 수정
+              | 
+              a.btn.btn-xs.btn-default(href='/users/#{user._id}?_method=DELETE') 삭제
+    a.btn.btn-primary(href='/users/new') 사용자추가
