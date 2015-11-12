@@ -21,7 +21,6 @@ router.get('/', needAuth, function(req, res, next) {
 });
 
 router.post('/', needAuth, function(req, res, next) {
-  console.log(req.body);
   if (!req.body.content) {
     return res.status(400).json({message: 'need content'});
   }

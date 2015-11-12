@@ -1,6 +1,6 @@
 /*global $:false */
 /*global _:false */
-/*jslint browser:true */
+/*jslint browser:true, devel: true */
 var TaskController = function() {
   function setAjaxHandler() {
     $( document ).ajaxStart(function() {
@@ -36,7 +36,7 @@ var TaskController = function() {
       if (options.length === section.find('.option.selected').length) {
         options.removeClass('selected');
       } else {
-        options.addClass('selected')
+        options.addClass('selected');
       }
       self.render();
     });
@@ -85,7 +85,8 @@ var TaskController = function() {
 
   Constructor.prototype.clearForm = function() {
       $("#form-task input").val("");
-      $("#form-task select").val("2");
+      $("#form-task select[name='category']").val("개인");
+      $("#form-task select[name='priority']").val("2");
       $("#form-task input:first").focus();
   };
 
@@ -100,8 +101,9 @@ var TaskController = function() {
     if (!task) {
       return;
     }
+    var self = this;
     $.ajax({
-      url: '/tasks/' + id,
+      url: '/tasks/' + task.id,
       method: 'PUT',
       dataType: 'json',
       data: {
@@ -129,19 +131,20 @@ var TaskController = function() {
     if (!task) {
       return;
     }
+    var self = this;
     if (confirm('정말로 삭제하시겠습니까?')) {
       $.ajax({
         url: '/tasks/' + task.id,
         method: 'DELETE',
         dataType: 'json',
         success: function(data) {
-          _.reject(self.tasks, function(t) {
+          self.tasks = _.reject(self.tasks, function(t) {
             return t.id === task.id;
           });
           var el = $(e.currentTarget).closest('li');
           el.remove();
         }
-      })
+      });
     }
   };
 
