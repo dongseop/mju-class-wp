@@ -1,5 +1,5 @@
 #main {
-  & > .spinner {
+  .spinner {
     display: none;
     width: 100%;
     height: 100%;
@@ -27,7 +27,7 @@
   }
 
   &.loading {
-    & > .spinner {
+    .spinner {
       display: block;
     }
   }
