@@ -94,9 +94,10 @@ var TaskController = function() {
   };
 
   Constructor.prototype.clearForm = function() {
-      $("#form-task input").val("");
-      $("#form-task select").val("2");
-      $("#form-task input:first").focus();
+    $("#form-task input").val("");
+    $("#form-task select[name='category']").val("개인");
+    $("#form-task select[name='priority']").val("2");
+    $("#form-task input:first").focus();
   };
 
   Constructor.prototype._findTask = function(e) {
@@ -106,11 +107,11 @@ var TaskController = function() {
   };
 
   Constructor.prototype.postDone = function(e) {
-    var self = this;
     var task = this._findTask(e);
     if (!task) {
       return;
     }
+    var self = this;
     $.ajax({
       url: '/tasks/' + task.id,
       method: 'PUT',
@@ -140,19 +141,20 @@ var TaskController = function() {
     if (!task) {
       return;
     }
+    var self = this;
     if (confirm('정말로 삭제하시겠습니까?')) {
       $.ajax({
         url: '/tasks/' + task.id,
         method: 'DELETE',
         dataType: 'json',
         success: function(data) {
-          _.reject(self.tasks, function(t) {
+          self.tasks = _.reject(self.tasks, function(t) {
             return t.id === task.id;
           });
           var el = $(e.currentTarget).closest('li');
           el.remove();
         }
-      })
+      });
     }
   };
 

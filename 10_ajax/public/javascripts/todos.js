@@ -84,10 +84,10 @@ var TaskController = function() {
   };
 
   Constructor.prototype.clearForm = function() {
-      $("#form-task input").val("");
-      $("#form-task select[name='category']").val("개인");
-      $("#form-task select[name='priority']").val("2");
-      $("#form-task input:first").focus();
+    $("#form-task input").val("");
+    $("#form-task select[name='category']").val("개인");
+    $("#form-task select[name='priority']").val("2");
+    $("#form-task input:first").focus();
   };
 
   Constructor.prototype._findTask = function(e) {
