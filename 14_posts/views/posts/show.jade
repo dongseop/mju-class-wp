@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  h1= post.title
+  h3 by #{post.email}
+  .well= post.content
+  
+  hr
+  h3 Comment (#{post.numComment})
+  table.table
+    tr
+      th email
+      th content
+      th time
+    each comment in comments
+      tr
+        td= comment.email
+        td= comment.content
+        td= moment(comment.createdAt).format('YYYY/MM/DD')
+  
+  form.form-inline(action='/posts/' + post._id + '/comments', method='POST')
+    .form-group
+      label.sr-only(for='email') email
+      input.form-control(name='email', placeholder='email')
+    .form-group
+      label.sr-only(for='content') content
+      input.form-control(name='content', size=50, placeholder='content')
+    button.btn.btn-info 댓글저장
+    
+  hr
+  a.btn.btn-default(href='/posts') 목록 
+  
