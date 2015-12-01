@@ -4,8 +4,8 @@ var mongoose = require('mongoose'),
 
 var schema = new Schema({
   content: {type: String, required: true, trim: true},
-  category: {type: Number, trim: true},
-  priority: {type: String, trim: true},
+  category: {type: String, trim: true},
+  priority: {type: Number, trim: true},
   deadline: Date,
   done: {type: Boolean, default: false},
   user: {type: Schema.Types.ObjectId, index: true, required: true},
