@@ -4,7 +4,9 @@
   "undef": true,
   "globals": {
     "jQuery": true,
-    "Promise"   : true
+    "Promise"   : true,
+    "$": true,
+    "_": true
   },
   "node": true
 }
