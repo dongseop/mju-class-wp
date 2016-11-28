@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 게시판
+  
+  table.table
+    tr
+      th 제목
+      th 작성자
+      th 댓글
+      th 작성일
+    each post in posts
+      tr
+        td
+          a(href='/posts/#{post.id}')= post.title
+        td= post.email
+        td= post.numComment
+        td= moment(post.createdAt).format('YYYY/MM/DD')
+
+
+  a.btn.btn-primary(href='/posts/new') 글작성

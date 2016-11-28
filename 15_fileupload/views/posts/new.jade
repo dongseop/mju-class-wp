@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h1 글 작성
+  
+  form(action='/posts', method='POST', enctype="multipart/form-data")
+    .form-group
+      label(for='email') 이메일
+      input.form-control(name='email')
+    .form-group
+      label(for='title') 제목
+      input.form-control(name='title')
+    .form-group
+      label(for='content') 내용
+      textarea.form-control(name='content')
+    .form-group
+      label(for='images') 이미지 1
+      input.form-control(type="file", name='photos')
+    .form-group
+      label(for='images') 이미지 2
+      input.form-control(type="file", name='photos')
+    .form-group
+      label(for='images') 이미지 3
+      input.form-control(type="file", name='photos')
+    .form-action
+      a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+      | &nbsp;
+      button.btn.btn-primary(type='submit') 글작성 
+  

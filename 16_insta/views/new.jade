@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Upload Image
+  img#preview.img-responsive(src="https://dummyimage.com/200x200/ccc/fff")
+  form#form(method="POST", action="/")
+    input#file.form-control(type="file")
+    p#status Please select a file
+    input#url.form-control(type="text", readonly="readonly", name="url", value="")
+    button#submit.btn.btn-primary(disabled="disabled") Upload  
+
+  script.
+    $(function() {
+      $("#preview").hide();
+      $("#file").change(function() {
+        var file = $("#file")[0].files[0];
+        if (file) {
+          var url = "/s3?filename=" + file.name + "&type=" + file.type;
+          console.log(url);
+          $.getJSON(url, function(resp) {
+            $.ajax({
+              url: resp.signedRequest,
+              method: 'PUT',
+              data: file,
+              headers: {'x-amz-acl': 'public-read', 'Content-Type': file.type},
+              processData: false, 
+              contentType: file.type,
+              success: function() {
+                $("#preview").attr("src", resp.url).show();
+                $("#url").val(resp.url);
+                $("#submit").prop("disabled", false);
+              }
+            });
+          });
+        }
+      });
+    });
