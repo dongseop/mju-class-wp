@@ -67,9 +67,9 @@ app.get('/', function(req, res, next) {
 // export S3_BUCKET=mju-aws-s3-image-test
 
 // for PC
-// setx AWS_ACCESS_KEY_ID=AKIAIR2NCQK4BK3GYPUA 
-// setx AWS_SECRET_ACCESS_KEY=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
-// setx S3_BUCKET=mju-aws-s3-image-test
+// set AWS_ACCESS_KEY_ID=AKIAIR2NCQK4BK3GYPUA 
+// set AWS_SECRET_ACCESS_KEY=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
+// set S3_BUCKET=mju-aws-s3-image-test
 
 // for HEROKU
 // heroku config:set AWS_ACCESS_KEY_ID =xxx AWS_SECRET_ACCESS_KEY =yyy
