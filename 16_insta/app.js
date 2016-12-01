@@ -51,15 +51,25 @@ app.get('/', function(req, res, next) {
   });
 });
 
+
+// 1. 아래의 AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY 는 
+//    AWS의 IAM에서 새로운 사용자를 추가해서 받아야 함!
+// 2. S3_BUCKET은 AWS의 S3에서 새로 생성해서 만들어야 함
+// 3. S3 bucket은 CORS 설정이 필요함
+// 4. IAM의 user에게는 S3를 access할 수 있는 permission을 줘야 함!
+
+//=============================
+// 환경변수 설정방법
+//=============================
 // for Mac
 // export AWS_ACCESS_KEY_ID=AKIAJ2H?????SYHZSI5Q 
 // export AWS_SECRET_ACCESS_KEY=9X8HmkWZQlWsYZovL4LLXedqD1NWd7Mn????????
 // export S3_BUCKET=mju-aws-s3-image-test
 
 // for PC
-// setx AWS_ACCESS_KEY_ID AKIAJ2H?????SYHZSI5Q 
-// setx AWS_SECRET_ACCESS_KEY 9X8HmkWZQlWsYZovL4LLXedqD1NWd7Mn????????
-// setx S3_BUCKET mju-aws-s3-image-test
+// setx AWS_ACCESS_KEY_ID=AKIAIR2NCQK4BK3GYPUA 
+// setx AWS_SECRET_ACCESS_KEY=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
+// setx S3_BUCKET=mju-aws-s3-image-test
 
 // for HEROKU
 // heroku config:set AWS_ACCESS_KEY_ID =xxx AWS_SECRET_ACCESS_KEY =yyy

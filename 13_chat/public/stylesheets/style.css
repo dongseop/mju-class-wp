@@ -4,7 +4,8 @@
   box-sizing: border-box; }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 3em; }
 
 a {
   color: #00B7FF; }
