@@ -1,106 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-	<title>jQuery Test</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<style type="text/css">
-		.section { padding:5px; margin:5px; border:1px solid #eeeeee;}
-		div#result {	border: 1px solid red; background:#EEEEEE;
-			padding:10px;margin:10px;		}
-	</style>
+  <meta charset="utf-8">
+  <title>jQuery Test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    .section {padding:5px; margin:5px; border:1px solid #eee; }
+    div#result {border: 1px solid red; background: #eee; padding:10px;margin:10px; }
+  </style>
 </head>
 <body>
-<div class="section">
-	<ul id="fruits">
-		<li>Apple</li>
-		<li>Orange</li>
-		<li>Melon</li>
-	</ul>
-</div>
-<div class="section">
-	<a href="http://www.google.com">Google</a>
-	<a href="http://www.apple.com">Apple</a>
-	<a href="http://www.microsoft.com">Microsoft</a>
-	<a href="http://www.oracle.com">Oracle</a>
-</div>
-<div class="section">
-<form id="test">
-	<input type="text" name="id" id="id"><br>
-	<input type="password" name="pwd" id="pwd"><br>
-	<select id="channel" name="channel">
-		<option value="kbs">KBS</option>
-		<option value="mbc">MBC</option>
-		<option value="sbs">SBS</option>
-	</select>
-	<p>
-	<input type="checkbox" name="hobby" value="baseball">야구
-	<input type="checkbox" name="hobby" value="basketball">농구
-	<input type="checkbox" name="hobby" value="soccer">축구
-	</p>
-	<p>
-	<input type="button" id="btn1" value="버튼1">
-	<input type="button" id="btn2" value="버튼2">
-	<input type="button" id="btn3" value="버튼3">
-	</p>
-</form>
-</div>
-<div id="result">
-<h3>RESULT</h3>
-</div>
+  <div class="section">
+    <ul id="fruits">
+      <li>Apple</li>
+      <li>Orange</li>
+      <li>Melon</li>
+    </ul>
+  </div>
+  <div class="section">
+    <a href="http://www.google.com">Google</a>
+    <a href="http://www.apple.com">Apple</a>
+    <a href="http://www.microsoft.com">Microsoft</a>
+    <a href="http://www.oracle.com">Oracle</a>
+  </div>
+  <div class="section">
+    <form id="test">
+      <input type="text" name="id" id="id"><br>
+      <input type="password" name="pwd" id="pwd"><br>
+      <select id="channel" name="channel">
+        <option value="kbs">KBS</option>
+        <option value="mbc">MBC</option>
+        <option value="sbs">SBS</option>
+      </select>
+      <p>
+        <input type="checkbox" name="hobby" value="baseball">야구
+        <input type="checkbox" name="hobby" value="basketball">농구
+        <input type="checkbox" name="hobby" value="soccer">축구
+      </p>
+      <p>
+        <input type="button" id="btn1" value="버튼1">
+        <input type="button" id="btn2" value="버튼2">
+        <input type="button" id="btn3" value="버튼3">
+      </p>
+    </form>
+  </div>
+  <div id="result">
+    <h3>RESULT</h3>
+  </div>
 </body>
 </html>
 <script type="text/javascript">
 $(function() {
-	// text / html 읽기
-	$("#result").append($("#fruits").html() + "<p>");
-	$("#result").append($("#fruits").text() + "<p>");
+  // text / html 읽기
+  $("#result").append($("#fruits").html() + "<p>");
+  $("#result").append($("#fruits").text() + "<p>");
 
-	// value 읽기
-	$("#result").append($("#channel").val() + "<p>");
+  // value 읽기
+  $("#result").append($("#channel").val() + "<p>");
 
-	// CSS 읽기
-	$("#result").append($("a:last").css("margin-top") + "<p>");
+  // CSS 읽기
+  $("#result").append($("a:last").css("margin-top") + "<p>");
 
-	// Attribute 읽기
-	$("a").each(function(idx) {
-		$("#result").append("a" + idx + ":" + $(this).attr("href")+ "<br>");
-	});
+  // Attribute 읽기
+  $("a").each(function(idx) {
+    $("#result").append("a" + idx + ":" + $(this).attr("href")+ "<br>");
+  });
 
-	// value 설정
-	$("#id").val("아이디");
-	$("#pwd").val("123");
+  // value 설정
+  $("#id").val("아이디");
+  $("#pwd").val("123");
 
-	// Attribute 설정
-	$("input[type='checkbox']").filter("[value='soccer']")
-	   .attr('checked', 'checked');
+  // Attribute 설정
+  $("input[type='checkbox']").filter("[value='soccer']")
+     .attr('checked', 'checked');
 
-	// text 설정
-	$("#fruits").find("li:first").text("사과");
+  // text 설정
+  $("#fruits").find("li:first").text("사과");
 
-	// click event + effect
-	$("#btn1").val("toggle").click(function() {
-		$("div.section:first").toggle();
-	});
-	$("#btn2").val("slide up").click(function() {
-		$("div.section:first").slideUp();
-	});
-	$("#btn3").val("slide down").click(function() {
-		$("div.section:first").slideDown();
-	});
+  // click event + effect
+  $("#btn1").val("toggle").click(function() {
+    $("div.section:first").toggle();
+  });
+  $("#btn2").val("slide up").click(function() {
+    $("div.section:first").slideUp();
+  });
+  $("#btn3").val("slide down").click(function() {
+    $("div.section:first").slideDown();
+  });
 
-	// mouse event
-	$("div.section").mouseover(function() {
-		$(this).css("background", "#f8dff5");
-	});
+  // mouse event
+  $("div.section").mouseover(function() {
+    $(this).css("background", "#f8dff5");
+  });
 
-	$("div.section").mouseout(function() {
-		$(this).css("background", "#ffffff");
-	});
+  $("div.section").mouseout(function() {
+    $(this).css("background", "#ffffff");
+  });
 
-	// change event
-	$("#channel").change(function() {
-		alert("You selected '" + $(this).val() + "'");
-	});
+  // change event
+  $("#channel").change(function() {
+    alert("You selected '" + $(this).val() + "'");
+  });
 });
 </script>

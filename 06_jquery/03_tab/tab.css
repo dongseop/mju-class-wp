@@ -2,9 +2,9 @@
   margin: 2em 0;
 }
 .tab:after, .tab>ul:after, .tab>ul>li:after{
-  content:"";
-  display:block;
-  clear:both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .tab > ul {
@@ -14,11 +14,10 @@
 }
 
 .tab > ul > li {
-  float:left;
-  margin-right:1px;
+  float: left;
+  margin-right: 1px;
   color: #fff;
-  border-top-left-radius: 0.4em;
-  border-top-right-radius: 0.4em;
+  border-radius: 0.5em 0.5em 0 0;
 }
 
 .tab > ul > li > a {
@@ -50,15 +49,13 @@
   font-weight: bold;
 }
 .tab > .content {
-  border-bottom-left-radius: 0.4em;
-  border-bottom-right-radius: 0.4em;
-  border-top-right-radius: 0.4em;
+  border-radius: 0 0.5em 0.5em 0.5em;
   background: #eee;
   border: 1px solid #4CB1E5;
 }
 
 .tab > .content > div {
-  padding: 2em;
+  padding: 1em;
   display: none;
 }
 
@@ -66,6 +63,6 @@
   display: block;
 }
 
-img.full {
-  width: 100%;
+.section > img {
+  max-width: 100%;
 }
