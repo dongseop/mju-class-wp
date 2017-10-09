@@ -1,15 +1,9 @@
-# App1: 레이아웃, Jade, Route 이해하기
+# App1: layout, pug, route 이해하기
 
 ## 1. 필요한 기본 유틸 설치: Express Generator, Bower, gulp
 ```
 # express 프로젝트 기본 골격 생성 프로그램
 npm install -g express-generator
-
-# 클라이언트(브라우저쪽) 패키지 관리 도구
-npm install -g bower
-
-# 빌드 자동화 도구 (make같은 기능의 프로그램)
-npm install -g gulp
 
 # 서버 자동 재시작 도구
 npm install -g nodemon
@@ -18,8 +12,9 @@ npm install -g nodemon
 ## 2. 프로젝트 생성
 Express generator를 이용하여
 ```
-express ex01 --git
-# Layout 엔진 Jade 사용
+express ex01 -v pug -c sass --git
+# Layout 엔진 pug 사용
+# CSS대신 SASS 사용
 # .gitignore 파일 자동 추가
 ```
 
@@ -39,14 +34,6 @@ atom .
 # express generator가 만들어둔 패키지 셋팅 인스톨
 npm install
 
-# gulp 로컬 인스톨
-npm install --save-dev gulp
-
-# gulp관련 패키지 인스톨
-npm install --save-dev gulp-jshint gulp-sass gulp-nodemon
-
-# session을 사용하기 위해서 인스톨
-npm install --save express-session method-override moment connect-flash
 ```
 
 
@@ -54,30 +41,32 @@ npm install --save express-session method-override moment connect-flash
 ```
 npm start
 ```
-참고: nodemon을 이용하면 프로그램이 변경될 때 서버 자동 재실행 할 수 있음.
 
-## 6. Client용 package install
+
+## 6. nodemon
 ```
-bower init
-bower install --save bootstrap jquery fontawesome bourbon
+# 참고: nodemon을 이용하면 프로그램이 변경될 때 서버 자동 재실행 할 수 있음.
+# package.json 수정
+  ...
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  ...
 ```
 
-## 7. gulpfile.js 작성
-gulpfile.js에 작업들을 기술하면 gulp 명령을 통해 해당 작업을 수행할 수 있다.
-gulpfile.js을 잘 살펴보자.
-현재 다음과 같은 작업을 정의하고 있다.
 
-- lint: JavaScript 파일들의 문법을 검사하고 report한다.
-- sass: scss파일들을 컴파일해서 public/stylesheet에 저장한다.
-- watch: sass디렉토리를 감시해서 변경이 일어나면 'sass' 작업을 수행한다.
-- nodemon: nodemon을 통해 bin/www 파일을 실행한다. (서버 실행)
-- default: 아무 명령을 수행하지 않으면 실행할 작업. lint, sass, watch, nodemon을 차례로 수행한다.
-
-그러므로 아래와 같은 명령으로 서버를 실행하면, scss파일 변경되면 자동 컴파일하고, js코드 바뀌면 자동으로 서버 재실행하도록 해서 서버를 실행할 수 있다.
-
+## 7. Client용 package CDN으로 연결
 ```
-gulp
+    ...
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    ...
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')
+    ...
 ```
+
 
 ## 8. app.js
 애플리케이션 미들웨어 설정들
@@ -86,6 +75,4 @@ gulp
 URL에 이런 내용이 들어오면 이런 작업을 해라
 
 ## 10. view
-Jade를 이용하여 Layout과 partial들. 각 페이지들 구성
-
-## 11. flash
+pug를 이용하여 Layout과 partial들. 각 페이지들 구성
