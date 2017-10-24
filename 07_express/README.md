@@ -36,6 +36,7 @@ npm install
 
 ```
 
+- Python 2.X : https://www.python.org/downloads/release/python-2714/
 
 ## 5. 프로그램 시작
 ```
