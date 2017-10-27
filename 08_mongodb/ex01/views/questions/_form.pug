@@ -1,0 +1,9 @@
+.form-group
+  label(for="title") Title
+  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
+.form-group
+  label(for="question") Question
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

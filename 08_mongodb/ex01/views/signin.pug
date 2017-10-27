@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .clearfix
+      form.form-signin(action='/signin', method='POST')
+        h3.form-signin-heading Signin
+        label.sr-only(for='email') Email address
+        input(
+          type='email', id='email', name='email', class='form-control', 
+          placeholder='Email address', required, autofocus
+        )
+        label.sr-only(for='password') Password
+        input(
+          type='password', id='password', name='password', class='form-control', 
+          placeholder='Password', required, autofocus
+        )
+        .checkbox
+          label 
+            input(type="checkbox", value="remember-me")
+            |
+            | Remember me
+        button.btn.btn-primary.btn-block(type='submit') Signin
+        div.sub 
+          a(href='/users/new') Signup
+          | 
+          | /
+          |
+          a(href='/reset-password') Reset Password
+      

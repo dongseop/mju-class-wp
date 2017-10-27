@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title= question.title
+
+    .question.show
+      .content= question.content
+      include _question
+
+      .buttons
+        button.btn.btn-primary #[i.fa.fa-thumbs-up] Like
+        | 
+        a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
+        | 
+        a.btn.btn-outline-danger.delete-btn(href="#", data-url=`/questions/${question.id}?_method=delete`) Delete
+      
+    if question.numAnswers > 0
+      hr
+      h3 #{question.numAnswers} Answers
+      .answers.show
+        each answer in answers
+          include _answer
+
+    form(action=`/questions/${question.id}/answers`, method='POST')
+      .form-group
+        label(for='answer') Your Answer
+        textarea.form-control(name="content", rows="5")
+      button.btn.btn-outline-primary(type="submit") Post Your Answer
+
+  script.
+    $(function() {
+      $('.delete-btn').click(function() {
+        if (confirm('Are you sure to delete?')) {
+          location = $(this).data('url');
+        }
+        return false;
+      });
+    });

@@ -1,0 +1,22 @@
+extends ../layout
+
+include ../includes/_paginate
+
+block content
+  .container
+    form.form-inline.search-input-group
+      i.fa.fa-search
+      input.form-control.mr-sm-2(type="text", placeholder="Search", aria-label="Search")
+
+    h1.main-title Questions
+
+    .questions
+      each question in questions.docs
+        .question
+          a.title(href=`/questions/${question.id}`)= question.title
+          include _question
+
+    +paginate(questions, '/questions', {query: "???XXX&&"})
+
+    hr
+    a.btn.btn-outline-primary(href='/questions/new') Ask Question

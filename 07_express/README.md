@@ -1,6 +1,6 @@
 # App1: layout, pug, route 이해하기
 
-## 1. 필요한 기본 유틸 설치: Express Generator, Bower, gulp
+## 1. 필요한 기본 유틸 설치: Express Generator, Nodemon
 ```
 # express 프로젝트 기본 골격 생성 프로그램
 npm install -g express-generator
@@ -22,7 +22,7 @@ express ex01 -v pug -c sass --git
 ```
 cd ex01
 ls -alF
-atom .
+code .       # 자기가 이용하는 에디터를 실행.
 ```
 
 ## 4. 기본 패키지 인스톨
@@ -56,7 +56,7 @@ npm start
 ```
 
 
-## 7. Client용 package CDN으로 연결
+## 7. Client용 package CDN으로 연결: views/layout.pug
 ```
     ...
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
@@ -77,3 +77,5 @@ URL에 이런 내용이 들어오면 이런 작업을 해라
 
 ## 10. view
 pug를 이용하여 Layout과 partial들. 각 페이지들 구성
+
+## 11. 소스 코드를 분석하고 수정해봅시다!

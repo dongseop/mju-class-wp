@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title= user.name
+          
+    dl.row
+      dt.col-sm-3 Email
+      dd.col-sm-9
+        a(href=`mailto:${user.email}`)= user.email
+
+      dt.col-sm-3 Created At
+      dd.col-sm-9= user.createdAt
+
+    hr
+    p
+      a.btn.btn-outline-secondary(href='/users/') List
+      | 
+      a.btn.btn-outline-primary(href=`/users/${user._id}/edit`) Edit
+      | 
+      a.btn.btn-outline-danger(href=`/users/${user._id}?_method=DELETE`) Delete
