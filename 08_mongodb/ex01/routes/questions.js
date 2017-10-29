@@ -60,7 +60,7 @@ router.delete('/:id', catchErrors(async (req, res, next) => {
 }));
 
 router.post('/', catchErrors(async (req, res, next) => {
-  const user = await User.findOne({email: 'dongseop@gmail.com'});
+  const user = req.session.user || await User.findOne({email: 'dongseop@gmail.com'});
   var question = new Question({
     title: req.body.title,
     author: user._id,
@@ -73,7 +73,7 @@ router.post('/', catchErrors(async (req, res, next) => {
 }));
 
 router.post('/:id/answers', catchErrors(async (req, res, next) => {
-  const user = await User.findOne({email: 'dongseop@gmail.com'});
+  const user = req.session.user || await User.findOne({email: 'dongseop@gmail.com'});
   const question = await Question.findById(req.params.id);
 
   if (!question) {

@@ -11,7 +11,7 @@
       #[span.number.num-views= question.numReads] reads
   .col-sm
     .author
-      | asked #{moment(question.createdAt).format('YYYY-MM-DD HH:mm')}
+      | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}
       if question.author
         | 
         | by #[a(href=`/users/${question.author.id}`)= question.author.name] 
