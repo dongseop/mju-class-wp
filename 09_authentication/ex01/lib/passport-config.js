@@ -39,7 +39,8 @@ module.exports = function(passport) {
       var email = (profile.emails && profile.emails[0]) ? profile.emails[0].value : '';
       var picture = (profile.photos && profile.photos[0]) ? profile.photos[0].value : '';
       var name = (profile.displayName) ? profile.displayName : 
-            [profile.name.givenName, profile.name.middleName, profile.name.familyName].filter(e => e).join(' ');
+        [profile.name.givenName, profile.name.middleName, profile.name.familyName]
+          .filter(e => e).join(' ');
       console.log(email, picture, name, profile.name);
       // 같은 facebook id를 가진 사용자가 있나?
       var user = await User.findOne({'facebook.id': profile.id});

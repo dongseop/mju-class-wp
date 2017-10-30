@@ -119,7 +119,7 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-router.post('/', needAuth, (req, res, next) => {
+router.post('/', (req, res, next) => {
   var err = validateForm(req.body, {needPassword: true});
   if (err) {
     req.flash('danger', err);
