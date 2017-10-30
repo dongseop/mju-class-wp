@@ -17,12 +17,12 @@ router.post('/signin', function(req, res, next) {
     if (err) {
       res.render('error', {message: "Error", error: err});
     } else if (!user || user.password !== req.body.password) {
-      req.flash('danger', 'ID or password is invalid');
+      req.flash('danger', 'Invalid username or password.');
       res.redirect('back');
     } else {
       req.session.user = user;
-      req.flash('success', 'Successfully signed in.');
-      res.redirect('/users');
+      req.flash('success', 'Welcome!');
+      res.redirect('/');
     }
   });
 });

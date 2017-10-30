@@ -1,6 +1,5 @@
 const express = require('express');
 const Question = require('../models/question');
-const User = require('../models/user'); 
 const Answer = require('../models/answer'); 
 const catchErrors = require('../lib/async-error');
 
@@ -8,12 +7,12 @@ const router = express.Router();
 
 // 동일한 코드가 users.js에도 있습니다. 이것은 나중에 수정합시다.
 function needAuth(req, res, next) {
-    if (req.session.user) {
-      next();
-    } else {
-      req.flash('danger', 'Please signin first.');
-      res.redirect('/signin');
-    }
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    req.flash('danger', 'Please signin first.');
+    res.redirect('/signin');
+  }
 }
 
 /* GET questions listing. */
@@ -50,6 +49,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id).populate('author');
   const answers = await Answer.find({question: question.id}).populate('author');
   question.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
+
   await question.save();
   res.render('questions/show', {question: question, answers: answers});
 }));
@@ -77,7 +77,7 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
 }));
 
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
-  const user = req.session.user;
+  const user = req.user;
   var question = new Question({
     title: req.body.title,
     author: user._id,
@@ -90,7 +90,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
 }));
 
 router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
-  const user = req.session.user;
+  const user = req.user;
   const question = await Question.findById(req.params.id);
 
   if (!question) {

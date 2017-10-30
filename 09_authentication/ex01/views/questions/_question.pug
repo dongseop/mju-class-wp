@@ -1,0 +1,17 @@
+.content= question.content
+.tags.badges
+  each tag in question.tags
+    span.badge.badge-phill.badge-secondary= tag
+    | 
+.row
+  .col-sm
+    .numbers.
+      #[span.number.num-votes= question.numLikes] likes,
+      #[span.number.num-answers= question.numAnswers] answers,
+      #[span.number.num-views= question.numReads] reads
+  .col-sm
+    .author
+      | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}
+      if question.author
+        | 
+        | by #[a(href=`/users/${question.author.id}`)= question.author.name] 

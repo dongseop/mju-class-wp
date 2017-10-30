@@ -54,7 +54,7 @@ router.get('/new', (req, res, next) => {
   res.render('users/new', {messages: req.flash()});
 });
 
-router.get('/:id/edit', (req, res, next) => {
+router.get('/:id/edit', needAuth, (req, res, next) => {
   User.findById(req.params.id, function(err, user) {
     if (err) {
       return next(err);
@@ -63,7 +63,7 @@ router.get('/:id/edit', (req, res, next) => {
   });
 });
 
-router.put('/:id', (req, res, next) => {
+router.put('/:id', needAuth, (req, res, next) => {
   var err = validateForm(req.body);
   if (err) {
     req.flash('danger', err);
@@ -100,7 +100,7 @@ router.put('/:id', (req, res, next) => {
   });
 });
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', needAuth, (req, res, next) => {
   User.findOneAndRemove({_id: req.params.id}, function(err) {
     if (err) {
       return next(err);
@@ -119,7 +119,7 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', needAuth, (req, res, next) => {
   var err = validateForm(req.body, {needPassword: true});
   if (err) {
     req.flash('danger', err);
