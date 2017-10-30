@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.form {
+  position: relative; }
+  .form input {
+    width: 20em; }
+  .form .fa-spin {
+    display: none;
+    position: absolute;
+    left: 21em;
+    top: 0.5em; }
+  .form.loading .fa-spin {
+    display: block; }
+  .form .suggest-box {
+    position: absolute;
+    background-color: #212427;
+    color: #fff;
+    margin: 0;
+    padding: 0; }
+    .form .suggest-box li {
+      padding: 0.5em 1em;
+      cursor: pointer;
+      list-style-type: none; }
+      .form .suggest-box li:hover {
+        background-color: #659CD8; }
+
+.dummy {
+  color: silver; }
+
+/*# sourceMappingURL=style.css.map */

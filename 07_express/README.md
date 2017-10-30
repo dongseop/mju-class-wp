@@ -36,8 +36,10 @@ npm install
 
 ```
 
+### node-sass-middleware가 다음 프로그램들에 dependency가 있을 수 있음
 - Python 2.X : https://www.python.org/downloads/release/python-2714/
-
+- Visual Studio Community Edition (Windows)
+- XCode command line tool (Mac)
 ## 5. 프로그램 시작
 ```
 npm start

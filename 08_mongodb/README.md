@@ -1,10 +1,16 @@
 # App2: MongoDB, Mongoose를 이용하여 CRUD 처리
 
+### node-sass-middleware가 다음 프로그램들에 dependency가 있을 수 있음
+- Python 2.X : https://www.python.org/downloads/release/python-2714/
+- Visual Studio Community Edition (Windows)
+- XCode command line tool (Mac)
+
 ## 1. Mongoose 설치
 ```
 # mongoose ORM 설치
 npm install --save mongoose
 ```
+그 외에 없는 모듈들도 마찬가지 방법으로 설치가 필요함!!
 
 ## 2. MongoDB 접속
 app.js에 다음 추가
@@ -26,6 +32,28 @@ mongoose.connection.on('error', console.error);
 ## 4. users.js controller 구현
 Route 함수에 맞게 User 모델을 이용하여 실제 controller logic 구현
 
+```
+// users.js
+GET /users
+GET /users/:id
+GET /users/new
+GET /users/:id/edit
+POST /users
+PUT /users/:id
+DELETE /users/:id
+
+// Questions
+GET /questions
+GET /questions/:id
+GET /questions/new
+GET /questions/:id/edit
+POST /questions
+PUT /questions/:id
+DELETE /questions/:id
+
+// Answer
+POST /questions/:id/answers
+```
 ## 6. Middleware를 이용하여 res.locals에 currentuser와 flashMessages 전달
 ```js
 app.use(function(req, res, next) {

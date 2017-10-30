@@ -131,7 +131,7 @@ router.post('/', (req, res, next) => {
     }
     if (user) {
       req.flash('danger', 'Email address already exists.');
-      res.redirect('back');
+      return res.redirect('back');
     }
     var newUser = new User({
       name: req.body.name,

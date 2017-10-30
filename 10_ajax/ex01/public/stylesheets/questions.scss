@@ -1,0 +1,87 @@
+.main-title {
+  .small {
+    float: right;
+    font-size: 1rem;
+    color: #bbb;
+  }
+}
+.question {
+  line-height: 160%;
+  margin-bottom: 2em;
+  .title {
+    font-size: 1.3rem;
+  }
+  .content {
+    color: #666;
+  }
+  .tags {
+    margin: 0.5em 0;
+  }
+}
+
+.author {
+  text-align: right;
+  font-size: 0.8em;
+  color: #81bbf2;
+}
+.numbers {
+  text-align: left;
+  color: #81bbf2;
+}
+.number {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0f5ca6;
+}
+.questions {
+  .content {
+    max-height: 5em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+}
+.show {
+  .content {
+    white-space: pre-wrap;
+  }
+  .buttons {
+    margin: 1em 0;
+  }
+
+  .answer {
+    position: relative;
+    .like-badge {
+      text-align: center;
+      padding: 0.5em;
+      position: absolute;
+      .button {
+        font-size: 0.8em;
+      }
+    }
+    .card-body{
+      padding-left: 4em;
+    }
+    margin-bottom: 1em;
+    .content {
+      margin-bottom: 0.5em;
+      color: #888;
+    }
+  }
+}
+
+.question-like-btn, .answer-like-btn {
+  .for-loading {display: none;}
+  cursor: pointer; 
+
+  &.loading {
+    & > span {display: none;}
+    .for-loading {display: inline-block;}
+    filter: opacity(30%);
+    cursor: wait;
+  }
+
+  &.disabled {
+    color: #bbb;
+    cursor: default;
+  }
+}

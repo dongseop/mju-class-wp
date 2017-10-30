@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title= question.title
+
+    .question.show
+      .content= question.content
+      include _question
+
+      .buttons
+        if currentUser
+          button.btn.btn-primary.question-like-btn(data-id=question.id) 
+            span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
+            span #[i.fa.fa-thumbs-up] Like
+          if question.author && question.author.id == currentUser.id
+            | 
+            a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
+            | 
+            a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
+      
+    if question.numAnswers > 0
+      hr
+      h3 #{question.numAnswers} Answer(s)
+      .answers.show
+        each answer in answers
+          include _answer
+
+    if currentUser
+      form(action=`/questions/${question.id}/answers`, method='POST')
+        .form-group
+          label(for='answer') Your Answer
+          textarea.form-control(name="content", rows="5")
+        button.btn.btn-primary(type="submit") Post Your Answer
+
+
+  script(src='/javascripts/question_client.js')

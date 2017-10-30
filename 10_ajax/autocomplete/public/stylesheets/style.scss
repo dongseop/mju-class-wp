@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.form {
+  position: relative;
+  input {
+    width: 20em;
+  }
+  .fa-spin {
+    display: none;
+    position: absolute;
+    left: 21em;
+    top: 0.5em;
+  }
+  &.loading {
+    .fa-spin {
+      display: block;
+    }
+  }
+  .suggest-box {
+    position: absolute;
+    background-color: #212427;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0.5em 1em;
+      cursor: pointer;
+      list-style-type: none;
+      &:hover {
+        background-color: #659CD8;
+      }
+    }
+  }
+}
+
+.dummy {
+  color: silver;
+}
