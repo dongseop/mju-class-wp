@@ -22,7 +22,7 @@ block content
             a.title(href=`/questions/${question.id}`)= question.title
             include _question
 
-      +paginate(questions, '/questions', {query: "???XXX&&"})
+      +paginate(questions, '/questions', query)
 
     hr
     a.btn.btn-primary(href='/questions/new') Ask Question

@@ -1,7 +1,13 @@
 mixin paginate(docs, link, params)
   - 
-    if (params) {
-      var url = `${link}?${querystring.stringify(params)}&page=`;
+    var query = {};
+    for (let key in params) {
+      if (key !== 'page') {
+        query[key] = params[key];
+      }
+    }
+    if (query) {
+      var url = `${link}?${querystring.stringify(query)}&page=`;
     } else {
       var url = `${link}?page=`;
     }

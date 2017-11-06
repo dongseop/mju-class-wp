@@ -33,7 +33,7 @@ router.get('/', catchErrors(async (req, res, next) => {
     populate: 'author', 
     page: page, limit: limit
   });
-  res.render('questions/index', {questions: questions, term: term});
+  res.render('questions/index', {questions: questions, term: term, query: req.query});
 }));
 
 router.get('/new', needAuth, (req, res, next) => {
