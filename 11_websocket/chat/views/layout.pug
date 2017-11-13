@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title MJ Chat
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')
+    
+    //- this application
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    //- socket io
+    script(src='/socket.io/socket.io.js') 
+  body
+    block content
+    //- lodash library
+    script(src='/javascripts/lodash.js')  
+    script(src='/javascripts/chat.js')
+
