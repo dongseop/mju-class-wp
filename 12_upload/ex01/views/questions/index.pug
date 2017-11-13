@@ -1,0 +1,28 @@
+extends ../layout
+
+include ../includes/_paginate
+
+block content
+  .container
+    form.form-inline.search-input-group(action='/questions', method='GET')
+      i.fa.fa-search
+      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
+
+    h1.main-title 
+      | Questions
+      if questions.total > 0
+        .small Total #{questions.total} question(s)
+
+    if questions.total <= 0 
+      .alert.alert-info No questions available yet
+    else
+      .questions
+        each question in questions.docs
+          .question
+            a.title(href=`/questions/${question.id}`)= question.title
+            include _question
+
+      +paginate(questions, '/questions', query)
+
+    hr
+    a.btn.btn-primary(href='/questions/new') Ask Question

@@ -1,0 +1,26 @@
+mixin paginate(docs, link, params)
+  - 
+    var query = {};
+    for (let key in params) {
+      if (key !== 'page') {
+        query[key] = params[key];
+      }
+    }
+    if (query) {
+      var url = `${link}?${querystring.stringify(query)}&page=`;
+    } else {
+      var url = `${link}?page=`;
+    }
+
+  if docs.pages > 1
+    - start = Math.max(docs.page - 5, 1);
+    - end = Math.min(docs.page + 5, docs.pages);
+    nav(aria-label="page navigation")
+      ul.pagination
+        li.page-item(class= (1 === docs.page) && 'disabled')
+          a.page-link(href= url + (docs.page - 1), tabindex='-1') Prev
+        - for(let p = start; p <= end; p++)
+          li.page-item(class= (p === docs.page) && 'active')
+            a.page-link(href= url + p)= p
+        li.page-item(class= (docs.pages === docs.page) && 'disabled')
+          a.page-link(href= url + (docs.page + 1), tabindex='-1') Next

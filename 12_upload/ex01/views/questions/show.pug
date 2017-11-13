@@ -5,6 +5,8 @@ block content
     h1.main-title= question.title
 
     .question.show
+      if question.img
+        img.img-fluid(src= question.img)
       include _question
 
       .buttons
@@ -31,6 +33,5 @@ block content
           label(for='answer') Your Answer
           textarea.form-control(name="content", rows="5")
         button.btn.btn-primary(type="submit") Post Your Answer
-
 
   script(src='/javascripts/question_client.js')

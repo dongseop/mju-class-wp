@@ -1,0 +1,30 @@
+.form-signin {
+  width: 300px;
+  margin: 0 auto;
+  padding: 1em;
+  .form-signin-heading, .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+  }
+  .form-control:focus {
+    z-index: 2;
+  }
+  input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .sub {
+    margin: 1em 0;
+  }
+}

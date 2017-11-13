@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    h1.main-title= user.name
+          
+    dl.row
+      dt.col-sm-3 Email
+      dd.col-sm-9
+        a(href=`mailto:${user.email}`)= user.email
+
+      dt.col-sm-3 Created At
+      dd.col-sm-9= user.createdAt
+      
+      if user.facebook.id
+        dt.col-sm-3 Facebook
+        dd.col-sm-9
+          img.img-fluid.rounded-circle(src= user.facebook.photo)
+
+    hr
+    p
+      a.btn.btn-outline-secondary(href='/users/') List
+      | 
+      a.btn.btn-outline-primary(href=`/users/${user._id}/edit`) Edit
+      | 
+      a.btn.btn-outline-danger.need-confirm-btn(href=`/users/${user._id}?_method=DELETE`) Delete

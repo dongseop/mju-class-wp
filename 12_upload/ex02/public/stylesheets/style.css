@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+body {
+  font: 1rem 'Montserrat', sans-serif;
+  margin-top: 50px;
+  padding-top: 1em; }
+  body > .main-content {
+    min-height: 400px; }
+
+a:hover {
+  text-decoration: none; }
+
+.jumbotron {
+  margin-top: -1em;
+  background: url("/images/bg.jpg") no-repeat left center;
+  min-height: 20em;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+
+.form-actions {
+  padding: 19px 20px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5; }
+
+.footer {
+  margin-top: 1em;
+  padding-top: 1em;
+  color: #aaa;
+  border-top: .05rem solid #e5e5e5; }
+
+.main-title {
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  margin: 1em 0 0.5em 0;
+  border-bottom: 1px solid #eee;
+  color: #011a72; }
+
+.header > .navbar {
+  background-color: #011a72 !important; }
+
+.search-input-group {
+  margin: 1em 0;
+  width: 100%;
+  position: relative; }
+  .search-input-group input {
+    border-radius: 2em;
+    padding-left: 2.5em;
+    width: 100% !important; }
+  .search-input-group i {
+    font-size: 1.3em;
+    top: 0.4em;
+    left: 0.5em;
+    color: #bababa;
+    position: absolute; }
+
+.form-signin {
+  width: 300px;
+  margin: 0 auto;
+  padding: 1em; }
+  .form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px; }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px; }
+  .form-signin .form-control:focus {
+    z-index: 2; }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  .form-signin .sub {
+    margin: 1em 0; }
+
+.main-title .small {
+  float: right;
+  font-size: 1rem;
+  color: #bbb; }
+
+.question {
+  line-height: 160%;
+  margin-bottom: 2em; }
+  .question .title {
+    font-size: 1.3rem; }
+  .question .content {
+    color: #666; }
+  .question .tags {
+    margin: 0.5em 0; }
+
+.author {
+  text-align: right;
+  font-size: 0.8em;
+  color: #81bbf2; }
+
+.numbers {
+  text-align: left;
+  color: #81bbf2; }
+
+.number {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0f5ca6; }
+
+.questions .content {
+  max-height: 5em;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.show .content {
+  white-space: pre-wrap; }
+
+.show .buttons {
+  margin: 1em 0; }
+
+.show .answer {
+  position: relative;
+  margin-bottom: 1em; }
+  .show .answer .like-badge {
+    text-align: center;
+    padding: 0.5em;
+    position: absolute; }
+    .show .answer .like-badge .button {
+      font-size: 0.8em; }
+  .show .answer .card-body {
+    padding-left: 4em; }
+  .show .answer .content {
+    margin-bottom: 0.5em;
+    color: #888; }
+
+.question-like-btn, .answer-like-btn {
+  cursor: pointer; }
+  .question-like-btn .for-loading, .answer-like-btn .for-loading {
+    display: none; }
+  .question-like-btn.loading, .answer-like-btn.loading {
+    filter: opacity(30%);
+    cursor: wait; }
+    .question-like-btn.loading > span, .answer-like-btn.loading > span {
+      display: none; }
+    .question-like-btn.loading .for-loading, .answer-like-btn.loading .for-loading {
+      display: inline-block; }
+  .question-like-btn.disabled, .answer-like-btn.disabled {
+    color: #bbb;
+    cursor: default; }
+
+/*# sourceMappingURL=style.css.map */
