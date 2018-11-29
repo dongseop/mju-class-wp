@@ -1,5 +1,5 @@
 $(function() {
-  $('#q').keyup(function() {
+  $('#q').keyup(_.debounce(function() {
     var query = $('#q').val() || "";
     query = query.trim();
 
@@ -27,5 +27,5 @@ $(function() {
         $('.form').removeClass('loading');  // spinner를 정지
       }
     });
-  });
+  }, 500));
 });
