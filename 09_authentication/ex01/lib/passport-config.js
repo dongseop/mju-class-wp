@@ -31,7 +31,7 @@ module.exports = function(passport) {
     // 이 부분을 여러분 Facebook App의 정보로 수정해야 합니다.
     clientID : '185081248729582',
     clientSecret : 'f02d8be90007cf67bd16495033e1b95a',
-    callbackURL : 'http://127.0.0.1:3000/auth/facebook/callback',
+    callbackURL : 'http://localhost:3000/auth/facebook/callback',
     profileFields : ['email', 'name', 'picture']
   }, async (token, refreshToken, profile, done) => {
     console.log('Facebook', profile); // profile 정보로 뭐가 넘어오나 보자.
