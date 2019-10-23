@@ -37,9 +37,41 @@ npm install
 ```
 
 ### node-sass-middleware가 다음 프로그램들에 dependency가 있을 수 있음
-- Python 2.X : https://www.python.org/downloads/release/python-2714/
+- Python
 - Visual Studio Community Edition (Windows)
 - XCode command line tool (Mac)
+
+### node-gyp를 설치하는 방법 (Windows)
+참고: https://github.com/nodejs/node-gyp#on-windows
+1. 최신 버전의 Python을 설치한다. (3.7이하)
+2. 다음 2가지 중 한가지를 설치한다.
+(1) 관리자 권한으로 승격된 cmd 창에서 
+```
+npm install --global --production windows-build-tools
+```
+(2) Visual Studio 2017 Community 를 설치한다. 
+(설치 중 반드시 "Desktop development with C++" 를 선택한다.)
+설치 주소: https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community
+
+설치 완료후 cmd 창에서
+```
+npm config set msvs_version 2017
+```
+
+### node-gyp를 설치하는 방법 (Mac)
+1. 최신 버전의 Python을 설치한다. (3.7이하)
+2. 다음 명령을 통해 XCode Command Line Tool을 설치한다.
+```
+xcode-select --instal
+```
+
+### 패키지 인스톨 중에 뭔가 이상해졌을 때, 패키지 전체를 지우고 새로 인스톨하기
+```
+rm -rf node_modules
+rm package-lock.json
+npm cache clean
+npm install
+```
 
 ## 5. 프로그램 시작
 ```
