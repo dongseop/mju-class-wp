@@ -11,7 +11,7 @@
     "debug": "~4.1.1",
     "express": "^4.17.1",
     "morgan": "~1.9.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "node-sass-middleware": "0.11.0",
     "pug": "2.0.4",
     "serve-favicon": "~2.5.0"
