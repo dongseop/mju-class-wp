@@ -10,7 +10,7 @@
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
     "node-sass-middleware": "^0.11.0",
