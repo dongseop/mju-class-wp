@@ -7,6 +7,11 @@ var http = require('http'),
 
 var DOCUMENT_ROOT = "../../03_css/";
 var server = http.createServer(function(req, res) {
+    if (path.normalize(decodeURIComponent(req.url)) !== decodeURIComponent(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
   var reqPath = url.parse(req.url).pathname;
   if (reqPath == "/") {
     reqPath = "ex01.html";
